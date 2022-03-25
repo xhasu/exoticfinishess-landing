@@ -8,8 +8,8 @@ export const Headline = ({ title = "" }) => {
 export const HeadlineGroup = ({ category = "", title = "" }) => {
   return (
     <hgroup>
-      <h3 className="uppercase text-center text-black font-light text-sm md:text-base tracking-widest leading-none">{category}</h3>
-      <h2 className="uppercase text-center text-black font-black text-2xl md:text-[clamp(24px,_20vw,_60px)] leading-none">{title}</h2>
+      <h4 className="uppercase text-center text-black font-light text-sm md:text-base tracking-widest leading-none">{category}</h4>
+      <h3 className="uppercase text-center text-black font-black text-2xl md:text-[clamp(24px,_20vw,_60px)] leading-none">{title}</h3>
     </hgroup>
   );
 };

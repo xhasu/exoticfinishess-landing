@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ScrollDown from "components/ui/scroll"
+
+import { gsap } from 'gsap/dist/gsap'
+import { TextPlugin } from 'gsap/dist/TextPlugin'
+
+gsap.registerPlugin(TextPlugin);
 
 const IntroSection = () => {
+
+  useEffect(() => {
+
+    gsap.to('.intro-section h2', { duration: 1, delay: 2, text: {value: "Hello there!" }})
+    gsap.to('.intro-section h1', { duration: 2, delay: 3, text: {value: "We are exotic finishess", preserveSpaces: true} });
+
+  }, [])
+
   return (
-    <div className="bg-primary min-h-screen flex place-items-center">
-      <div className="max-w-2xl mx-auto border-l-2 border-black pl-6">
-        <h2 className="text-2xl uppercase leading-none mb-2">Hello there!</h2>
-        <h1 className="text-7xl uppercase font-black">We are exotic finishess</h1>
+    <div className="relative bg-primary intro-section h">
+      <div className="min-h-screen flex place-items-center">
+        <div className="max-w-2xl md:min-w-[672px] mx-auto border-l-2 border-black pl-6">
+          <h2 className="text-2xl uppercase leading-none mb-2">&nbsp;</h2>
+          <h1 className="text-7xl uppercase font-black">&nbsp;</h1>
+        </div>
       </div>
+      <ScrollDown />
     </div>
   )
 }

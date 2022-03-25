@@ -7,7 +7,7 @@ const LocationSection = () => {
       <div className="mb-12">
         <HeadlineGroup category="Our" title="Services" />
       </div>
-      <div className="text-2xl mb-8 text-center">
+      <div className="text-2xl mb-8 text-center font-century font-normal">
         <p>Our services are for all USA, contact for further information let&apos;s work together.</p>
       </div>
       <div className="mb-8">

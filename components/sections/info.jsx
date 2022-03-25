@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Headline, HeadlineGroup } from 'components/shared/headlines'
-import MoreServices from "components/ui/more"
+import MoreServices from 'components/ui/more'
+
+import { gsap } from 'gsap/dist/gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const MarketingSection = () => {
+
+  useEffect(() => {
+    gsap.from('.marketing-section h2', {
+      scrollTrigger: {
+        trigger: '.marketing-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: '-100%'
+    });
+
+    gsap.from('.marketing-section .more-services', {
+      scrollTrigger: {
+        trigger: '.marketing-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+      y: '-50%'
+    });
+
+  }, [])
+
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black marketing-section">
       <div className="min-h-[480px] grid place-content-center">
         <div>
           <Headline title="Visual Marketing" />
@@ -18,7 +48,7 @@ export const MarketingSection = () => {
       </div>
       <div className="py-24 px-4">
         <HeadlineGroup category="Visual Marketing" title="Services" />
-        <ul className="px-4 mx-auto text-center mt-8">
+        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Sticker manufacturer</li>
           <li>- Grand Opening/Closing/Moving</li>
           <li>- Retail Branding</li>
@@ -35,8 +65,33 @@ export const MarketingSection = () => {
 }
 
 export const DecorSection = () => {
+
+  useEffect(() => {
+    gsap.from('.decor-section h2', {
+      scrollTrigger: {
+        trigger: '.decor-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: '-100%'
+    });
+
+    gsap.from('.decor-section .more-services', {
+      scrollTrigger: {
+        trigger: '.decor-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+      y: '-50%'
+    });
+
+  }, [])
+
   return (
-    <div>
+    <div className="decor-section">
       <div className="min-h-[480px] grid place-content-center bg-black text-white">
         <div>
           <Headline title="Decor" />
@@ -50,7 +105,7 @@ export const DecorSection = () => {
       </div>
       <div className="py-24 px-4">
         <HeadlineGroup category="Decor" title="Services" />
-        <ul className="px-4 mx-auto text-center mt-8">
+        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Custom acrylic printing</li>
           <li>- Window frost/WIndow ting</li>
           <li>- Custom wall wraps</li>
@@ -64,8 +119,33 @@ export const DecorSection = () => {
 }
 
 export const VehicleSection = () => {
+
+  useEffect(() => {
+    gsap.from('.vehicle-section h2', {
+      scrollTrigger: {
+        trigger: '.vehicle-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: '-100%'
+    });
+
+    gsap.from('.vehicle-section .more-services', {
+      scrollTrigger: {
+        trigger: '.vehicle-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+      y: '-50%'
+    });
+
+  }, [])
+
   return (
-    <div>
+    <div className="vehicle-section">
       <div className="min-h-[480px] grid place-content-center bg-black text-white">
         <div>
           <Headline title="Vehicle customization" />
@@ -79,7 +159,7 @@ export const VehicleSection = () => {
       </div>
       <div className="py-24 px-4">
         <HeadlineGroup category="Vehicle customization" title="Services" />
-        <ul className="px-4 mx-auto text-center mt-8">
+        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Black out package gloss 3m </li>
           <li>- Black out package matte 3m</li>
           <li>- Paint protectionf film (xpel stealth matte)	 </li>

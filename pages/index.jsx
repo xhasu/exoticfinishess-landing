@@ -6,6 +6,7 @@ import ServicesSection from "components/sections/services"
 import { MarketingSection, DecorSection, VehicleSection } from "components/sections/info"
 import MachineSection from "components/sections/machine"
 import LocationSection from "components/sections/location"
+import ContactSection from "components/sections/contact"
 import ClientsSection from "components/sections/clients"
 
 const HomePage = () => {
@@ -25,6 +26,7 @@ const HomePage = () => {
       </div>
       <MachineSection />
       <LocationSection />
+      <ContactSection />
       <ClientsSection />
     </div>
   )

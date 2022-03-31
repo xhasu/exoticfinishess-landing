@@ -35,7 +35,7 @@ const ServicesSection = () => {
   return (
     <div className="min-h-[640px] flex place-items-center bg-white services-section">
       <div className="mx-auto max-w-5xl">
-        <h2 className="uppercase text-center text-black font-black mb-4 text-[clamp(36px,_20vw,_180px)] leading-tight">Services</h2>
+        <h2 className="uppercase text-center text-black font-black mb-4 text-[clamp(36px,_15vw,_180px)] leading-tight">Services</h2>
         <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xs md:max-w-none mx-auto">
           <Button>Visual marketing</Button>
           <Button>Decor</Button>

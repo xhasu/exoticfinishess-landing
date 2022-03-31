@@ -13,3 +13,11 @@ export const ChevronDownIcon = () => {
     </svg>
   )
 }
+
+export const FacebookIcon = () => {
+  return null
+}
+
+export const InstagramIcon = () => {
+  return null
+}

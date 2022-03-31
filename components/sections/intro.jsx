@@ -10,8 +10,8 @@ const IntroSection = () => {
 
   useEffect(() => {
 
-    gsap.to('.intro-section h2', { duration: 1, delay: 2, text: {value: "Hello there!" }})
-    gsap.to('.intro-section h1', { duration: 2, delay: 3, text: {value: "We are exotic finishess", preserveSpaces: true} });
+    gsap.to('.intro-section h2', { duration: 1, delay: 2, ease: "linear", text: { value: "Hello there!" }})
+    gsap.to('.intro-section h1', { duration: 4, delay: 3, ease: "linear", text: { value: "We are exotic finishess", preserveSpaces: true }});
 
   }, [])
 

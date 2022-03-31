@@ -31,6 +31,16 @@ export const MarketingSection = () => {
       y: '-50%'
     });
 
+    gsap.from('.marketing-section .marketing-content', {
+      scrollTrigger: {
+        trigger: '.marketing-content',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+
   }, [])
 
   return (
@@ -46,7 +56,7 @@ export const MarketingSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4">
+      <div className="py-24 px-4 marketing-content">
         <HeadlineGroup category="Visual Marketing" title="Services" />
         <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Sticker manufacturer</li>
@@ -87,8 +97,19 @@ export const DecorSection = () => {
       duration: 0.5,
       y: '-50%'
     });
+    
+    gsap.from('.decor-section .decor-content', {
+      scrollTrigger: {
+        trigger: '.decor-content',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
 
   }, [])
+
 
   return (
     <div className="decor-section">
@@ -103,7 +124,7 @@ export const DecorSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4">
+      <div className="py-24 px-4 decor-content">
         <HeadlineGroup category="Decor" title="Services" />
         <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Custom acrylic printing</li>
@@ -142,6 +163,16 @@ export const VehicleSection = () => {
       y: '-50%'
     });
 
+    gsap.from('.vehicle-section .vehicle-content', {
+      scrollTrigger: {
+        trigger: '.vehicle-content',
+        start: 'top center',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+
   }, [])
 
   return (
@@ -157,7 +188,7 @@ export const VehicleSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4">
+      <div className="py-24 px-4 vehicle-content">
         <HeadlineGroup category="Vehicle customization" title="Services" />
         <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
           <li>- Black out package gloss 3m </li>

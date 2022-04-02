@@ -18,7 +18,7 @@ const ClientsSection = () => {
           <img src="/images/clients/client-apple.png" alt="Exotic Finishess Apple" width="132" height="162" />
         </div>
         <div className="mx-auto max-w-xs">
-          <img src="/images/clients/client-calvin-Klein.png" alt="Exotic Finishess Calvin Klein" width="186" height="230" />
+          <img src="/images/clients/client-calvin-klein.png" alt="Exotic Finishess Calvin Klein" width="186" height="230" />
         </div>
       </div>
     </div>

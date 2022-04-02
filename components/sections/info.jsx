@@ -3,9 +3,21 @@ import { Headline, HeadlineGroup } from 'components/shared/headlines'
 import MoreServices from 'components/ui/more'
 
 import { gsap } from 'gsap/dist/gsap'
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
+
+const scrollTo = (section) => {
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: {
+      y: section,
+      offsetY: 50,
+    }
+  });
+}
 
 export const MarketingSection = () => {
 
@@ -44,11 +56,11 @@ export const MarketingSection = () => {
   }, [])
 
   return (
-    <div className="bg-white text-black marketing-section">
+    <div className="bg-white text-black marketing-section" id="marketing">
       <div className="min-h-[480px] grid place-content-center">
         <div>
           <Headline title="Visual Marketing" />
-          <MoreServices />
+          <MoreServices onClick={() => scrollTo('#marketingcontent')} />
         </div>
       </div>
       <div className="bg-black">
@@ -56,9 +68,9 @@ export const MarketingSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4 marketing-content">
+      <div className="py-24 px-4 marketing-content" id="marketingcontent">
         <HeadlineGroup category="Visual Marketing" title="Services" />
-        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
+        <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Sticker manufacturer</li>
           <li>- Grand Opening/Closing/Moving</li>
           <li>- Retail Branding</li>
@@ -110,13 +122,12 @@ export const DecorSection = () => {
 
   }, [])
 
-
   return (
-    <div className="decor-section">
+    <div className="decor-section" id="decor">
       <div className="min-h-[480px] grid place-content-center bg-black text-white">
         <div>
           <Headline title="Decor" />
-          <MoreServices />
+          <MoreServices onClick={() => scrollTo('#decorcontent')} />
         </div>
       </div>
       <div className="bg-black">
@@ -124,9 +135,9 @@ export const DecorSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4 decor-content">
+      <div className="py-24 px-4 decor-content" id="decorcontent">
         <HeadlineGroup category="Decor" title="Services" />
-        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
+        <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Custom acrylic printing</li>
           <li>- Window frost/WIndow ting</li>
           <li>- Custom wall wraps</li>
@@ -176,11 +187,11 @@ export const VehicleSection = () => {
   }, [])
 
   return (
-    <div className="vehicle-section">
+    <div className="vehicle-section" id="vehicle">
       <div className="min-h-[480px] grid place-content-center bg-black text-white">
         <div>
           <Headline title="Vehicle customization" />
-          <MoreServices />
+          <MoreServices onClick={() => scrollTo('#vehiclecontent')} />
         </div>
       </div>
       <div className="bg-black">
@@ -188,9 +199,9 @@ export const VehicleSection = () => {
           <div className="aspect-video bg-gray-900"></div>
         </div>
       </div>
-      <div className="py-24 px-4 vehicle-content">
+      <div className="py-24 px-4 vehicle-content" id="vehiclecontent">
         <HeadlineGroup category="Vehicle customization" title="Services" />
-        <ul className="font-century font-normal px-4 mx-auto text-center mt-8">
+        <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Black out package gloss 3m </li>
           <li>- Black out package matte 3m</li>
           <li>- Paint protectionf film (xpel stealth matte)	 </li>

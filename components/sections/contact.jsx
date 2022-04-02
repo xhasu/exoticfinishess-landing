@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { FacebookIcon, InstagramIcon } from "components/ui/icons"
+import { FacebookIcon, InstagramIcon, EmailIcon, PinIcon, PhoneIcon } from "components/ui/icons"
 
 const ContactSection = () => {
 
@@ -55,20 +55,29 @@ const ContactSection = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 mb-12 md:mb-24">
+    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-12 md:mb-24">
       <div>
-        <div className="rounded-md bg-primary p-8">
-          <ul>
-            <li>
+        <div className="rounded-md bg-primary py-8 px-6 lg:p-8">
+          <ul className="text-xl">
+            <li className="flex gap-2 mb-4 items-center">
+              <div className="w-12 flex-none flex justify-center text-center">
+                <EmailIcon />
+              </div>
               <a href="mailto:info@exoticfinishess.com">info@exoticfinishess.com</a>
             </li>
-            <li>
+            <li className="flex gap-2 mb-4 items-center">
+              <div className="w-12 flex-none flex justify-center text-center">
+                <PinIcon />
+              </div>
               <span>USA</span>
             </li>
-            <li>
+            <li className="flex gap-2 mb-4 items-center">
+              <div className="w-12 flex-none flex justify-center text-center">
+                <PhoneIcon />
+              </div>
               <a href="tel:+442033241234">305 767 - 9095</a>
             </li>
-            <li>
+            <li className="flex gap-4 mt-6">
               <InstagramIcon />
               <FacebookIcon />
             </li>
@@ -76,7 +85,7 @@ const ContactSection = () => {
         </div>
       </div>
       <div>
-        <h2 className="font-century font-bold text-2xl mb-4">Contact</h2>
+        <h2 className="font-bold text-2xl mb-4">Contact</h2>
         <form ref={formRef} name="contactForm" className="w-full needs-validation" autoComplete="off" noValidate>
           <div className="input-group">
             <input className="input-field" value={name} onChange={event => setName(event.target.value)} type="text" name="name" id="name" placeholder="Name" minLength={4} required />
@@ -95,7 +104,7 @@ const ContactSection = () => {
             <div className="invalid-feedback">Message is required</div>
           </div>
           <div className="flex justify-end">
-            <button type="submit" className="bg-primary rounded-full px-8 py-1 text-center font-century font-normal text-3xl">Send</button>
+            <button type="submit" className="bg-primary rounded-full px-8 py-1 text-center  font-normal text-3xl">Send</button>
           </div>
         </form>
       </div>

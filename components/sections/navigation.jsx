@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 
 import { gsap } from 'gsap/dist/gsap'
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const NavigationSection = () => {
@@ -14,15 +16,37 @@ const NavigationSection = () => {
         trigger: '.nav-section',
         // start: 'top center',
         end: 'bottom center',
-        pin: true,
-        scrub: true,
+        // pin: true,
+        // scrub: true,
         // markers: true,
       }
     })
 
     NavTimeline.from('.nav-section nav li', { opacity: 0, stagger: 1} )
 
+    gsap.to('header', {
+      scrollTrigger: {
+        trigger: '.nav-section',
+        start: 'top top',
+        toggleClass: {
+          targets: 'header',
+          className: 'bg-white',
+        },
+        // markers: true,
+      }
+    })
+
   }, [])
+
+  const scrollTo = (section) => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: section,
+        offsetY: 50,
+      }
+    });
+  }
 
   return (
     <div className="bg-black">
@@ -30,10 +54,10 @@ const NavigationSection = () => {
         <div className="max-w-xs mx-auto">
           <nav className="text-6xl text-center text-white uppercase font-black">
             <ul>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer" onClick={() => scrollTo('#intro')}>
                 <h3>Home</h3>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer" onClick={() => scrollTo('#services')}>
                 <h3>Services</h3>
               </li>
               <li className="cursor-pointer">

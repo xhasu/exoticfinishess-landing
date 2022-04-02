@@ -15,9 +15,19 @@ export const ChevronDownIcon = () => {
 }
 
 export const FacebookIcon = () => {
-  return null
+  return <img src="/images/icons/facebook-icon.png" alt="Facebook Icon Zurikate" width={47} height={47} />
 }
 
 export const InstagramIcon = () => {
-  return null
+  return <img src="/images/icons/instagram-icon.png" alt="Instagram Icon Zurikate" width={47} height={47} />
+}
+
+export const EmailIcon = () => {
+  return <img src="/images/icons/email-icon.png" alt="Email Icon" width={38} height={27} />
+}
+export const PinIcon = () => {
+  return <img src="/images/icons/pin-icon.png" alt="Pin Location Icon" width={24} height={34} />
+}
+export const PhoneIcon = () => {
+  return <img src="/images/icons/phone-icon.png" alt="Phone Icon" width={30} height={30} />
 }

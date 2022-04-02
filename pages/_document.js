@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <link rel="stylesheet" href="/css/fonts.css" />
       </Head>
-      <body className="font-serif">
+      <body className="font-century">
         <LayoutMain>
           <Main />
         </LayoutMain>

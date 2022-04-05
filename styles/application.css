@@ -44,3 +44,12 @@
   }
 
 }
+
+@layer components {
+  .header-dark {
+    @apply !bg-black text-white;
+  }
+  .header-dark img {
+    @apply filter invert;
+  }
+}

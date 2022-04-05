@@ -14,15 +14,12 @@ const NavigationSection = () => {
     const NavTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: '.nav-section',
-        // start: 'top center',
-        end: 'bottom center',
-        // pin: true,
-        // scrub: true,
-        // markers: true,
+        start: 'top 25%',
+        toggleActions: 'play none none reverse',
       }
     })
 
-    NavTimeline.from('.nav-section nav li', { opacity: 0, stagger: 1} )
+    NavTimeline.from('.nav-section nav li', { opacity: 0, stagger: 0.2} )
 
     gsap.to('header', {
       scrollTrigger: {
@@ -30,7 +27,7 @@ const NavigationSection = () => {
         start: 'top top',
         toggleClass: {
           targets: 'header',
-          className: 'bg-white',
+          className: 'header-dark',
         },
         // markers: true,
       }
@@ -50,17 +47,17 @@ const NavigationSection = () => {
 
   return (
     <div className="bg-black">
-      <div className="h-screen min-h-[420px] max-h-[960px] flex place-items-center nav-section">
+      <div className="min-h-[640px] max-h-[960px] flex place-items-center nav-section">
         <div className="max-w-xs mx-auto">
-          <nav className="text-6xl text-center text-white uppercase font-black">
+          <nav className="text-4xl md:text-6xl text-center text-white uppercase font-black">
             <ul>
-              <li className="cursor-pointer" onClick={() => scrollTo('#intro')}>
+              <li className="cursor-pointer mb-4" onClick={() => scrollTo('#intro')}>
                 <h3>Home</h3>
               </li>
-              <li className="cursor-pointer" onClick={() => scrollTo('#services')}>
+              <li className="cursor-pointer mb-4" onClick={() => scrollTo('#services')}>
                 <h3>Services</h3>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer mb-4">
                 <h3>About</h3>
               </li>
             </ul>

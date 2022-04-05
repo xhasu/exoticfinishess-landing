@@ -31,8 +31,7 @@ const IntroSection = () => {
     gsap.from('.stage-2 .st-group-1 > *', { 
       scrollTrigger: {
         trigger: '.stage-2',
-        start: 'top center',
-        // pin: true,
+        start: 'top 75%',
         scrub: true,
         stagger: 0.5,
         // markers: true,
@@ -41,30 +40,25 @@ const IntroSection = () => {
       opacity: 0,
     })
 
-    gsap.to('.stage-intro .st-intro-left', {
+    const configTimeline = {
       scrollTrigger: {
-        trigger: '.stage-intro',
-        start: 'center 25%',
+        trigger: '.intro-section',
+        start: '10% top',
+        end: 'bottom bottom',
+        scrub: true,
         toggleActions: 'play none none reverse',
-        markers: true,
-      },
-      x: '-100%'
-    })
+        // markers: true,
+      }
+    }
 
-    gsap.to('.stage-intro .st-intro-right', {
-      scrollTrigger: {
-        trigger: '.stage-intro',
-        start: 'center 25%',
-        toggleActions: 'play none none reverse',
-        markers: true,
-      },
-      x: '+100%'
-    })
-      
-    // tl.to('.stage-intro .st-intro-left', { x: '-100%', duration: 0.5})
-      // .to('.stage-intro .st-intro-right', { x: '+100%', duration: 0.5}, 0)
-      // .to('.stage-intro .st-intro-left', { x: '-200%', duration: 0.5})
-      // .to('.stage-intro .st-intro-righ', { x: '-200%', duration: 0.5}, 0)
+    const tlIntroLeft = gsap.timeline(configTimeline);
+    const tlIntroRight = gsap.timeline(configTimeline);
+
+    tlIntroLeft.to('.stage-intro .st-intro-left', { x: '-100%', duration: 0.5})
+      .to('.stage-intro .st-intro-left', { x: '-200%', duration: 0.5})
+
+    tlIntroRight.to('.stage-intro .st-intro-right', { x: '+100%', duration: 0.5})
+      .to('.stage-intro .st-intro-right', { x: '+200%', duration: 0.5})
 
   }, [])
 
@@ -72,12 +66,12 @@ const IntroSection = () => {
     <div className="relative intro-section bg-black" id="intro">
 
       <div className="sticky top-0">
-        <div className="absolute top-0 left-0 right-0 h-screen z-0 stage-intro">
+        <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 select-none pointer-events-none stage-intro">
           <div className="w-1/2 absolute top-0 bottom-0 bg-primary left-0 st-intro-left">
-            <img src="/images/backgrounds/intro-left.png" alt="" className="absolute top-0 bottom-0 left-full w-auto h-full" />
+            <img src="/images/backgrounds/intro-left.png" alt="" className="absolute top-0 bottom-0 left-full -ml-0.5 w-auto h-full" />
           </div>
           <div className="w-1/2 absolute top-0 bottom-0 bg-primary right-0 st-intro-right">
-            <img src="/images/backgrounds/intro-right.png" alt="" className="absolute top-0 bottom-0 right-full w-auto h-full" />
+            <img src="/images/backgrounds/intro-right.png" alt="" className="absolute top-0 bottom-0 right-full -mr-0.5 w-auto h-full" />
           </div>
         </div>
       </div>
@@ -87,19 +81,19 @@ const IntroSection = () => {
         <div className="st-group-1">
           <div className="max-w-2xl md:min-w-[640px] mx-auto md:border-l-2 border-black pl-6">
             <h2 className="text-2xl uppercase leading-none mb-2">&nbsp;</h2>
-            <h1 className="text-7xl uppercase font-acuminpro font-black">&nbsp;</h1>
+            <h1 className="text-5xl md:text-7xl uppercase font-acuminpro font-black">&nbsp;</h1>
           </div>
         </div>
 
       </div>
 
-      <div className="min-h-screen flex justify-center items-center z-10 bg-black stage-2">
+      <div className="min-h-[420px] flex justify-center items-center z-10 bg-black stage-2">
 
         <div className="st-group-1">
-          <div className="max-w-7xl mx-auto text-white text-center">
+          <div className="max-w-7xl mx-auto text-white text-center px-4">
             <h3 className="text-4xl uppercase mb-12">Welcome</h3>
             <img src="/images/brand.png" alt="" width={250} height={250} className="mx-auto mb-8" />
-            <h2 className="font-acuminpro font-black uppercase text-7xl">Skins for everything</h2>
+            <h2 className="font-acuminpro font-black uppercase text-3xl lg:text-7xl">Skins for everything</h2>
             <h6 className="text-xl">What would you like to wrap or protect with out custom vinyl skins?</h6>
           </div>
         </div>

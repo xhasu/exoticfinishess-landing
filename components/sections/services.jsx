@@ -14,22 +14,24 @@ const ServicesSection = () => {
     gsap.from('.services-section h2', {
       scrollTrigger: {
         trigger: '.services-section',
-        start: 'top 30%',
-        toggleActions: 'play none none reverse',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1,
         // markers: true
       },
-      opacity: 0,
-      y: '100%'
+      ease: 'linear',
+      y: '50%'
     });
 
     gsap.from('.services-section .flex', {
       scrollTrigger: {
         trigger: '.services-section',
-        start: 'top 30%',
-        toggleActions: 'play none none reverse',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1,
       },
       opacity: 0,
-      y: '-50%'
+      y: '240px'
     });
 
   }, [])

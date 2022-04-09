@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { UIContext } from "contexts/uicontext";
 
 import { gsap } from 'gsap/dist/gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
@@ -8,6 +9,8 @@ gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const NavigationSection = () => {
+
+  const { showAbout, setShowAbout } = useContext(UIContext);
 
   useEffect(() => {
 
@@ -57,7 +60,7 @@ const NavigationSection = () => {
               <li className="cursor-pointer mb-4" onClick={() => scrollTo('#services')}>
                 <h3>Services</h3>
               </li>
-              <li className="cursor-pointer mb-4">
+              <li className="cursor-pointer mb-4" onClick={() => setShowAbout(!showAbout)}>
                 <h3>About</h3>
               </li>
             </ul>

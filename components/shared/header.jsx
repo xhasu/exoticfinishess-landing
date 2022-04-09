@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
+import { UIContext } from "contexts/uicontext";
 import { PlusIcon } from "components/ui/icons"
+
 import { gsap } from 'gsap/dist/gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
-import { UIContext } from "contexts/uicontext";
 
 gsap.registerPlugin(ScrollToPlugin);
 

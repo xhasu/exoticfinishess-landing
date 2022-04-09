@@ -24,12 +24,11 @@ export const MarketingSection = () => {
   useEffect(() => {
     gsap.from('.marketing-section h2', {
       scrollTrigger: {
-        trigger: '.marketing-section',
+        trigger: '.marketing-head',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
       opacity: 0,
-      y: '-100%'
     });
 
     gsap.from('.marketing-section .more-services', {
@@ -39,8 +38,8 @@ export const MarketingSection = () => {
         toggleActions: 'play none none reverse',
       },
       opacity: 0,
-      duration: 0.5,
-      y: '-50%'
+      duration: 1.5,
+      y: '50%'
     });
 
     gsap.from('.marketing-section .marketing-content', {
@@ -50,14 +49,14 @@ export const MarketingSection = () => {
         toggleActions: 'play none none reverse',
       },
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
     });
 
   }, [])
 
   return (
     <div className="bg-white text-black marketing-section" id="marketing">
-      <div className="min-h-[480px] grid place-content-center">
+      <div className="min-h-[480px] grid place-content-center marketing-head">
         <div>
           <Headline title="Visual Marketing" />
           <MoreServices onClick={() => scrollTo('#marketingcontent')} />

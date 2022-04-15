@@ -11,6 +11,19 @@ gsap.registerPlugin(ScrollToPlugin);
 const ServicesSection = () => {
 
   useEffect(() => {
+
+    ScrollTrigger.create({
+      trigger: '.services-section',
+      start: '-45px top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      toggleClass: {
+        targets: 'header',
+        className: 'header-dark',
+      },
+      // markers: true,
+    })
+
     gsap.from('.services-section h2', {
       scrollTrigger: {
         trigger: '.services-section',
@@ -41,15 +54,15 @@ const ServicesSection = () => {
       duration: 1,
       scrollTo: {
         y: section,
-        offsetY: 50,
+        offsetY: 160,
       }
     });
   }
 
   return (
-    <div className="min-h-[640px] flex place-items-center bg-white services-section" id="services">
+    <div className="min-h-[420px] flex place-items-center bg-white services-section" id="services">
       <div className="mx-auto max-w-5xl">
-        <h2 className="uppercase text-center text-black font-black mb-4 text-[clamp(36px,_15vw,_180px)] leading-tight">Services</h2>
+        <h2 className="uppercase text-center text-black font-black mb-4 text-[clamp(36px,_15vw,_180px)] leading-tight font-acuminpro">Services</h2>
         <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xs md:max-w-none mx-auto">
           <Button onClick={() => scrollTo('#marketing')}>Visual marketing</Button>
           <Button onClick={() => scrollTo('#decor')}>Decor</Button>

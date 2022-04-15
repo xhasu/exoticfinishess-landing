@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'century': ['CenturyGothic', 'sans-serif'],
-        'acuminpro': ['AcuminPro', 'sans-serif'],
+        'acuminpro': ['AcuminProWide', 'sans-serif'],
         'myriadpro': ['MyriadPro', 'sans-serif'],
       },
       colors: {

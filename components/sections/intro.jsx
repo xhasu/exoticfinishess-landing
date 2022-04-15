@@ -15,58 +15,64 @@ const IntroSection = () => {
     gsap.to('.stage-1 h2', { duration: 1, delay: 1, ease: "linear", text: { value: "Hello there!" }})
     gsap.to('.stage-1 h1', { duration: 2, delay: 2, ease: "linear", text: { value: "We are exotic finishess", preserveSpaces: true }});
 
-    gsap.to('.stage-1 .st-group-1' ,{
+  }, [])
+
+  useEffect(() => {
+
+    gsap.to('.stage-1 .st-group-1', {
       scrollTrigger: {
         trigger: '.stage-1',
-        start: 'top top',
-        end: 'bottom center',
-        // pin: true,
+        start: "center center",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false,
         scrub: true,
-        // markers: true,
       },
-      y: '-25%',
-      opacity: 0
+      opacity: 0,
+      y: "-25%",
     });
 
-    gsap.from('.stage-2 .st-group-1 > *', { 
+    gsap.from('.stage-2 .st-group-1', {
       scrollTrigger: {
         trigger: '.stage-2',
-        start: 'top 75%',
+        start: "center center",
+        // end: "300% center",
+        pin: true,
+        // pinSpacing: false,
         scrub: true,
-        stagger: 0.5,
         // markers: true,
       },
-      y: '-50%',
       opacity: 0,
-    })
+      y: "+=10%",
+    });
 
-    const configTimeline = {
+    gsap.to('.stage-intro .st-intro-left', {
       scrollTrigger: {
         trigger: '.intro-section',
-        start: '10% top',
-        end: 'bottom bottom',
+        start: "center bottom",
+        end: "bottom bottom",
         scrub: true,
-        toggleActions: 'play none none reverse',
-        // markers: true,
-      }
-    }
+      },
+      x: "-=200%",
+    });
 
-    const tlIntroLeft = gsap.timeline(configTimeline);
-    const tlIntroRight = gsap.timeline(configTimeline);
-
-    tlIntroLeft.to('.stage-intro .st-intro-left', { x: '-100%', duration: 0.5})
-      .to('.stage-intro .st-intro-left', { x: '-200%', duration: 0.5})
-
-    tlIntroRight.to('.stage-intro .st-intro-right', { x: '+100%', duration: 0.5})
-      .to('.stage-intro .st-intro-right', { x: '+200%', duration: 0.5})
+    gsap.to('.stage-intro .st-intro-right', {
+      scrollTrigger: {
+        trigger: '.intro-section',
+        start: "center bottom",
+        end: "bottom bottom",
+        scrub: true,
+      },
+      x: "+=200%",
+    });
 
   }, [])
 
   return (
     <div className="relative intro-section bg-black" id="intro">
 
-      <div className="sticky top-0">
-        <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 select-none pointer-events-none stage-intro">
+      <div className="fixed top-0 left-0 right-0 h-screen z-0 stage-intro">
+        <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 select-none pointer-events-none">
           <div className="w-1/2 absolute top-0 bottom-0 bg-primary left-0 st-intro-left">
             <img src="/images/backgrounds/intro-left.png" alt="" className="absolute top-0 bottom-0 left-full -ml-0.5 w-auto h-full" />
           </div>
@@ -76,18 +82,18 @@ const IntroSection = () => {
         </div>
       </div>
 
-      <div className="min-h-screen flex justify-center items-center z-10 stage-1">
+      <div className="relative min-h-screen flex justify-center items-center z-10 stage-1">
 
         <div className="st-group-1">
-          <div className="max-w-2xl md:min-w-[640px] mx-auto md:border-l-2 border-black pl-6">
-            <h2 className="text-2xl uppercase leading-none mb-2">&nbsp;</h2>
-            <h1 className="text-5xl md:text-7xl uppercase font-acuminpro font-black">&nbsp;</h1>
+          <div className="max-w-2xl md:min-w-[720px] mx-auto md:border-l-2 border-black pl-6">
+            <h2 className="text-2xl uppercase leading-none mb-2 min-h-[1em]"></h2>
+            <h1 className="text-5xl md:text-7xl uppercase font-acuminpro font-black min-h-[2em]"></h1>
           </div>
         </div>
 
       </div>
 
-      <div className="min-h-[420px] flex justify-center items-center z-10 bg-black stage-2">
+      <div className="relative flex justify-center items-center z-10 stage-2">
 
         <div className="st-group-1">
           <div className="max-w-7xl mx-auto text-white text-center px-4">
@@ -99,6 +105,7 @@ const IntroSection = () => {
         </div>
 
       </div>
+
       {/* <ScrollDown /> */}
     </div>
   )

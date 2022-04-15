@@ -22,52 +22,44 @@ const scrollTo = (section) => {
 export const MarketingSection = () => {
 
   useEffect(() => {
-    gsap.from('.marketing-section h2', {
+    gsap.from('.marketing-section h2, .marketing-section .more-services', {
       scrollTrigger: {
         trigger: '.marketing-head',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-    });
-
-    gsap.from('.marketing-section .more-services', {
-      scrollTrigger: {
-        trigger: '.marketing-section',
-        start: 'top center',
-        toggleActions: 'play none none reverse',
-      },
-      opacity: 0,
-      duration: 1.5,
       y: '50%'
     });
 
-    gsap.from('.marketing-section .marketing-content', {
+    gsap.from('.marketing-section .marketing-content > *', {
       scrollTrigger: {
         trigger: '.marketing-content',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-      duration: 1,
+      y: '25%'
     });
 
   }, [])
 
   return (
     <div className="bg-white text-black marketing-section" id="marketing">
-      <div className="min-h-[480px] grid place-content-center marketing-head">
+      <div className="min-h-[480px] grid place-content-center sticky top-1/4 marketing-head">
         <div>
           <Headline title="Visual Marketing" />
           <MoreServices onClick={() => scrollTo('#marketingcontent')} />
         </div>
       </div>
-      <div className="bg-black">
-        <div className="mx-auto max-w-screen-xl mb-8">
-          <div className="aspect-video bg-gray-900"></div>
+      <div className="relative bg-black">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="aspect-video"></div>
         </div>
       </div>
-      <div className="py-24 px-4 marketing-content" id="marketingcontent">
+      <div className="relative py-24 px-4 bg-white marketing-content" id="marketingcontent">
         <HeadlineGroup category="Visual Marketing" title="Services" />
         <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Sticker manufacturer</li>
@@ -88,53 +80,45 @@ export const MarketingSection = () => {
 export const DecorSection = () => {
 
   useEffect(() => {
-    gsap.from('.decor-section h2', {
+
+    gsap.from('.decor-section h2, .decor-section .more-services', {
       scrollTrigger: {
-        trigger: '.decor-section',
+        trigger: '.decor-head',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-      y: '-100%'
+      y: '50%'
     });
 
-    gsap.from('.decor-section .more-services', {
-      scrollTrigger: {
-        trigger: '.decor-section',
-        start: 'top center',
-        toggleActions: 'play none none reverse',
-      },
-      opacity: 0,
-      duration: 0.5,
-      y: '-50%'
-    });
-    
-    gsap.from('.decor-section .decor-content', {
+    gsap.from('.decor-section .decor-content > *', {
       scrollTrigger: {
         trigger: '.decor-content',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-      duration: 0.5,
+      y: '25%'
     });
 
   }, [])
 
   return (
-    <div className="decor-section" id="decor">
-      <div className="min-h-[480px] grid place-content-center bg-black text-white">
+    <div className="decor-section bg-black" id="decor">
+      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
         <div>
           <Headline title="Decor" />
           <MoreServices onClick={() => scrollTo('#decorcontent')} />
         </div>
       </div>
-      <div className="bg-black">
-        <div className="mx-auto max-w-screen-xl mb-8">
-          <div className="aspect-video bg-gray-900"></div>
+      <div className="relative bg-black">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="aspect-video"></div>
         </div>
       </div>
-      <div className="py-24 px-4 decor-content" id="decorcontent">
+      <div className="relative py-24 px-4 bg-white decor-content" id="decorcontent">
         <HeadlineGroup category="Decor" title="Services" />
         <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Custom acrylic printing</li>
@@ -152,53 +136,45 @@ export const DecorSection = () => {
 export const VehicleSection = () => {
 
   useEffect(() => {
-    gsap.from('.vehicle-section h2', {
+
+    gsap.from('.vehicle-section h2, .vehicle-section .more-services', {
       scrollTrigger: {
-        trigger: '.vehicle-section',
+        trigger: '.vehicle-head',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-      y: '-100%'
+      y: '50%'
     });
 
-    gsap.from('.vehicle-section .more-services', {
-      scrollTrigger: {
-        trigger: '.vehicle-section',
-        start: 'top center',
-        toggleActions: 'play none none reverse',
-      },
-      opacity: 0,
-      duration: 0.5,
-      y: '-50%'
-    });
-
-    gsap.from('.vehicle-section .vehicle-content', {
+    gsap.from('.vehicle-section .vehicle-content > *', {
       scrollTrigger: {
         trigger: '.vehicle-content',
         start: 'top center',
         toggleActions: 'play none none reverse',
       },
+      stagger: 0.2,
       opacity: 0,
-      duration: 0.5,
+      y: '25%'
     });
 
   }, [])
 
   return (
-    <div className="vehicle-section" id="vehicle">
-      <div className="min-h-[480px] grid place-content-center bg-black text-white">
+    <div className="vehicle-section bg-black" id="vehicle">
+      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
         <div>
           <Headline title="Vehicle customization" />
           <MoreServices onClick={() => scrollTo('#vehiclecontent')} />
         </div>
       </div>
-      <div className="bg-black">
-        <div className="mx-auto max-w-screen-xl mb-8">
-          <div className="aspect-video bg-gray-900"></div>
+      <div className="relative bg-black">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="aspect-video"></div>
         </div>
       </div>
-      <div className="py-24 px-4 vehicle-content" id="vehiclecontent">
+      <div className="relative py-24 px-4 bg-white vehicle-content" id="vehiclecontent">
         <HeadlineGroup category="Vehicle customization" title="Services" />
         <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Black out package gloss 3m </li>

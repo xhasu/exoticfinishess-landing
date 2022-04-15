@@ -36,17 +36,19 @@ const HomePage = () => {
       <main>
         {showAbout && <AboutSection />}
         <IntroSection />
-        <NavigationSection />
-        <ServicesSection />
-        <div>
-          <MarketingSection />
-          <DecorSection />
-          <VehicleSection />
+        <div className="relative z-20">
+          <NavigationSection />
+          <ServicesSection />
+          <div>
+            <MarketingSection />
+            <DecorSection />
+            <VehicleSection />
+          </div>
+          <MachineSection />
+          <LocationSection />
+          <ContactSection />
+          <ClientsSection />
         </div>
-        <MachineSection />
-        <LocationSection />
-        <ContactSection />
-        <ClientsSection />
       </main>
     </UIContext.Provider>
   )

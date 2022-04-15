@@ -3,7 +3,7 @@ import { HeadlineGroup } from 'components/shared/headlines'
 
 const LocationSection = () => {
   return (
-    <div className="px-4 mx-auto max-w-screen-xl">
+    <div className="px-4 mx-auto max-w-4xl">
       <div className="mb-12">
         <HeadlineGroup category="Our" title="Services" />
       </div>

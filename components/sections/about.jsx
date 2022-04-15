@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="fixed inset-0 bg-primary z-10">
-      <div className="relative max-w-7xl mx-auto h-full grid place-content-center z-10">
+    <div className="fixed inset-0 bg-primary z-40">
+      <div className="relative max-w-7xl mx-auto h-full grid place-content-center">
         <div className="lg:flex pt-14 px-4 lg:px-12">
           <div className="flex-none pr-8 mb-4">
             <h2 className="uppercase text-4xl lg:text-7xl font-acuminpro font-black">Exotic <br /> finishess</h2>

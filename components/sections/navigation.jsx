@@ -24,18 +24,6 @@ const NavigationSection = () => {
 
     NavTimeline.from('.nav-section nav li', { opacity: 0, stagger: 0.2} )
 
-    gsap.to('header', {
-      scrollTrigger: {
-        trigger: '.nav-section',
-        start: 'top top',
-        toggleClass: {
-          targets: 'header',
-          className: 'header-dark',
-        },
-        // markers: true,
-      }
-    })
-
   }, [])
 
   const scrollTo = (section) => {

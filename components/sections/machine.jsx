@@ -3,11 +3,11 @@ import { HeadlineGroup } from 'components/shared/headlines'
 
 const MachineSection = () => {
   return (
-    <div className="px-4 mx-auto max-w-screen-xl">
+    <div className="px-4 mx-auto max-w-4xl">
       <div className="mb-12">
         <HeadlineGroup category="Our machine" title="Mimaki" />
       </div>
-      <div className="text-2xl mb-8  font-normal">
+      <div className="text-xl mb-8 font-normal">
         <p>We want the best for your business, that&apos;s why we have the best machine in the market to delivery high quality graphic design installations.</p>
         <br />
         <p>Also we offer design services if you don&apos;t know how to start, our team work can advise and accompany through all the design and installation process.</p>

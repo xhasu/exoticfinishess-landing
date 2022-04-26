@@ -44,20 +44,28 @@ export const MarketingSection = () => {
       y: '25%'
     });
 
+    gsap.to('.marketing-video', {
+      scrollTrigger: {
+        trigger: '.marketing-video',
+        pin: true,
+        pinSpacing: false,
+      }
+    })
+
   }, [])
 
   return (
-    <div className="bg-white text-black marketing-section" id="marketing">
+    <div className="relative bg-white text-black marketing-section z-0" id="marketing">
       <div className="min-h-[480px] grid place-content-center sticky top-1/4 marketing-head">
         <div>
           <Headline title="Visual Marketing" />
           <MoreServices onClick={() => scrollTo('#marketingcontent')} />
         </div>
       </div>
-      <div className="relative bg-black">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="aspect-video"></div>
-        </div>
+      <div className="relative bg-black marketing-video">
+        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+          <source src="/media/marketing.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="relative py-24 px-4 bg-white marketing-content" id="marketingcontent">
         <HeadlineGroup category="Visual Marketing" title="Services" />
@@ -72,6 +80,10 @@ export const MarketingSection = () => {
           <li>- Interior wall designs</li>
         </ul>
         <div className="border-b border-black mx-auto max-w-[180px] mt-8"></div>
+      </div>
+
+      <div className="absolute top-[8%] left-[8%] floating z-0 select-none pointer-events-none">
+        <img src="/images/icons/icon-ring.png" alt="" width={49} height={49} />
       </div>
     </div>
   )
@@ -103,20 +115,28 @@ export const DecorSection = () => {
       y: '25%'
     });
 
+    gsap.to('.decor-video', {
+      scrollTrigger: {
+        trigger: '.decor-video',
+        pin: true,
+        pinSpacing: false,
+      }
+    })
+
   }, [])
 
   return (
-    <div className="decor-section bg-black" id="decor">
+    <div className="relative bg-black decor-section z-10" id="decor">
       <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
         <div>
           <Headline title="Decor" />
           <MoreServices onClick={() => scrollTo('#decorcontent')} />
         </div>
       </div>
-      <div className="relative bg-black">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="aspect-video"></div>
-        </div>
+      <div className="relative bg-black decor-video">
+        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+          <source src="/media/decor.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="relative py-24 px-4 bg-white decor-content" id="decorcontent">
         <HeadlineGroup category="Decor" title="Services" />
@@ -159,20 +179,28 @@ export const VehicleSection = () => {
       y: '25%'
     });
 
+    gsap.to('.vehicle-video', {
+      scrollTrigger: {
+        trigger: '.vehicle-video',
+        pin: true,
+        pinSpacing: false,
+      }
+    })
+
   }, [])
 
   return (
-    <div className="vehicle-section bg-black" id="vehicle">
+    <div className="relative bg-black vehicle-section z-20" id="vehicle">
       <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
         <div>
           <Headline title="Vehicle customization" />
           <MoreServices onClick={() => scrollTo('#vehiclecontent')} />
         </div>
       </div>
-      <div className="relative bg-black">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="aspect-video"></div>
-        </div>
+      <div className="relative bg-black vehicle-video">
+        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+          <source src="/media/vehicle.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="relative py-24 px-4 bg-white vehicle-content" id="vehiclecontent">
         <HeadlineGroup category="Vehicle customization" title="Services" />

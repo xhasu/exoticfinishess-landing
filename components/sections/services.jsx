@@ -60,7 +60,7 @@ const ServicesSection = () => {
   }
 
   return (
-    <div className="min-h-[420px] flex place-items-center bg-white services-section" id="services">
+    <div className="relative min-h-[480px] flex place-items-center bg-white services-section" id="services">
       <div className="mx-auto max-w-5xl">
         <h2 className="uppercase text-center text-black font-black mb-4 text-[clamp(36px,_15vw,_180px)] leading-tight font-acuminpro">Services</h2>
         <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xs md:max-w-none mx-auto">
@@ -69,6 +69,11 @@ const ServicesSection = () => {
           <Button onClick={() => scrollTo('#vehicle')}>Vehicle customization</Button>
         </div>
       </div>
+
+      <div className="absolute top-[18%] right-[12%] floating z-0 select-none pointer-events-none">
+        <img src="/images/icons/icon-ring.png" alt="" width={49} height={49} />
+      </div>
+      
     </div>
   )
 }

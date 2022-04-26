@@ -62,3 +62,26 @@
     @apply translate-x-0 translate-y-0;
   }
 }
+
+@layer components {
+  @keyframes floating {
+    0% {
+        -webkit-transform: translatey(0);
+        transform: translatey(0)
+    }
+
+    50% {
+        -webkit-transform: translatey(-60px);
+        transform: translatey(-60px)
+    }
+
+    100% {
+        -webkit-transform: translatey(0);
+        transform: translatey(0)
+    }
+  }
+
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+}

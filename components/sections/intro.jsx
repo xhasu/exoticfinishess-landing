@@ -32,16 +32,17 @@ const IntroSection = () => {
       y: "-25%",
     });
 
-    gsap.from('.stage-2 .st-group-1', {
+    gsap.from('.stage-2 .st-group-1 > div > *', {
       scrollTrigger: {
         trigger: '.stage-2',
         start: "center center",
-        // end: "300% center",
+        toggleActions: "play none none reverse",
         pin: true,
+        // scrub: true,
         // pinSpacing: false,
-        scrub: true,
         // markers: true,
       },
+      stagger: 0.2,
       opacity: 0,
       y: "+=10%",
     });
@@ -53,7 +54,7 @@ const IntroSection = () => {
         end: "bottom bottom",
         scrub: true,
       },
-      x: "-=200%",
+      x: "-=300%",
     });
 
     gsap.to('.stage-intro .st-intro-right', {
@@ -63,24 +64,13 @@ const IntroSection = () => {
         end: "bottom bottom",
         scrub: true,
       },
-      x: "+=200%",
+      x: "+=300%",
     });
 
   }, [])
 
   return (
     <div className="relative intro-section bg-black" id="intro">
-
-      <div className="fixed top-0 left-0 right-0 h-screen z-0 stage-intro">
-        <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 select-none pointer-events-none">
-          <div className="w-1/2 absolute top-0 bottom-0 bg-primary left-0 st-intro-left">
-            <img src="/images/backgrounds/intro-left.png" alt="" className="absolute top-0 bottom-0 left-full -ml-0.5 w-auto h-full" />
-          </div>
-          <div className="w-1/2 absolute top-0 bottom-0 bg-primary right-0 st-intro-right">
-            <img src="/images/backgrounds/intro-right.png" alt="" className="absolute top-0 bottom-0 right-full -mr-0.5 w-auto h-full" />
-          </div>
-        </div>
-      </div>
 
       <div className="relative min-h-screen flex justify-center items-center z-10 stage-1">
 
@@ -98,15 +88,34 @@ const IntroSection = () => {
         <div className="st-group-1">
           <div className="max-w-7xl mx-auto text-white text-center px-4">
             <h3 className="text-4xl uppercase mb-12">Welcome</h3>
-            <img src="/images/brand.png" alt="" width={250} height={250} className="mx-auto mb-8" />
+            <img src="/images/brand.png" alt="Exotic Finishess Brand Logo" width={250} height={250} className="mx-auto mb-8" />
             <h2 className="font-acuminpro font-black uppercase text-3xl lg:text-7xl">Skins for everything</h2>
             <h6 className="text-xl">What would you like to wrap or protect with out custom vinyl skins?</h6>
           </div>
         </div>
 
+        <div className="absolute top-[8%] left-[8%] floating z-0 select-none pointer-events-none">
+          <img src="/images/icons/icon-ring-gold.png" alt="" width={48} height={49} />
+        </div>
+
+        <div className="absolute bottom-[18%] right-[18%] floating z-0 select-none pointer-events-none">
+          <img src="/images/icons/icon-ring-gold.png" alt="" width={48} height={49} />
+        </div>
+
       </div>
 
-      {/* <ScrollDown /> */}
+      <div className="fixed top-0 left-0 right-0 h-screen z-0 stage-intro">
+        <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 select-none pointer-events-none">
+          <div className="w-1/2 absolute top-0 bottom-0 bg-primary left-0 st-intro-left">
+            <img src="/images/backgrounds/intro-left.png" alt="Exotic Finishess" className="absolute top-0 bottom-0 left-full -ml-0.5 w-auto max-w-none h-full" />
+          </div>
+          <div className="w-1/2 absolute top-0 bottom-0 bg-primary right-0 st-intro-right">
+            <img src="/images/backgrounds/intro-right.png" alt="Exotic Finishess" className="absolute top-0 bottom-0 right-full -mr-0.5 w-auto max-w-none h-full" />
+          </div>
+        </div>
+      </div>
+
+      <ScrollDown />
     </div>
   )
 }

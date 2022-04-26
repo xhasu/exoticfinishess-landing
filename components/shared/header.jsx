@@ -16,9 +16,8 @@ const Header = () => {
   useEffect(() => {
 
     ScrollTrigger.create({
-      trigger: '#header',
+      trigger: 'html',
       start: 'top top',
-      endTrigger: 'html',
       end: 'bottom top',
       toggleClass: {
         targets: '.icon-plus',

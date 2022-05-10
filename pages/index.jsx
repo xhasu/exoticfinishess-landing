@@ -15,18 +15,26 @@ import { UIContext } from "contexts/uicontext";
 const HomePage = () => {
 
   const [showAbout, setShowAbout] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     // add overflow hidden to body if showAbout is true
-    if (showAbout) {
+    if (showAbout || showMenu) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-  }, [showAbout]);
+  }, [showAbout, showMenu]);
+
+  const UIData = {
+    showAbout: showAbout,
+    setShowAbout: setShowAbout,
+    showMenu: showMenu,
+    setShowMenu: setShowMenu,
+  }
 
   return (
-    <UIContext.Provider value={{ showAbout: showAbout, setShowAbout: setShowAbout }}>
+    <UIContext.Provider value={UIData}>
       <Head>
         <title>Exotic Finishess</title>
       </Head>
@@ -35,9 +43,9 @@ const HomePage = () => {
 
       <main>
         {showAbout && <AboutSection />}
+        {showMenu && <NavigationSection />}
         <IntroSection />
         <div className="relative z-20">
-          <NavigationSection />
           <ServicesSection />
           <div>
             <MarketingSection />

@@ -10,23 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const NavigationSection = () => {
 
-  const { showAbout, setShowAbout } = useContext(UIContext);
-
-  useEffect(() => {
-
-    const NavTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.nav-section',
-        start: 'top 25%',
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    NavTimeline.from('.nav-section nav li', { opacity: 0, stagger: 0.2} )
-
-  }, [])
+  const { showAbout, setShowAbout, showMenu, setShowMenu } = useContext(UIContext);
 
   const scrollTo = (section) => {
+
+    setShowMenu(!showMenu);
+
     gsap.to(window, {
       duration: 1,
       scrollTo: {
@@ -36,9 +25,14 @@ const NavigationSection = () => {
     });
   }
 
+  const handleShowAbout = () => {
+    setShowAbout(!showAbout);
+    setShowMenu(!showMenu);
+  }
+
   return (
-    <div className="bg-black">
-      <div className="min-h-[640px] max-h-[960px] flex place-items-center nav-section">
+    <div className="bg-black fixed inset-0 z-40">
+      <div className="h-screen flex place-items-center nav-section">
         <div className="max-w-xs mx-auto">
           <nav className="text-4xl md:text-6xl text-center text-white uppercase font-black">
             <ul>
@@ -48,7 +42,7 @@ const NavigationSection = () => {
               <li className="cursor-pointer mb-4" onClick={() => scrollTo('#services')}>
                 <h3>Services</h3>
               </li>
-              <li className="cursor-pointer mb-4" onClick={() => setShowAbout(!showAbout)}>
+              <li className="cursor-pointer mb-4" onClick={handleShowAbout}>
                 <h3>About</h3>
               </li>
             </ul>

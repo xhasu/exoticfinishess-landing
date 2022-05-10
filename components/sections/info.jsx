@@ -63,7 +63,7 @@ export const MarketingSection = () => {
         </div>
       </div>
       <div className="relative bg-black marketing-video">
-        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/marketing.mp4" type="video/mp4" />
         </video>
       </div>
@@ -127,14 +127,14 @@ export const DecorSection = () => {
 
   return (
     <div className="relative bg-black decor-section z-10" id="decor">
-      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
+      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white decor-head">
         <div>
           <Headline title="Decor" />
           <MoreServices onClick={() => scrollTo('#decorcontent')} />
         </div>
       </div>
       <div className="relative bg-black decor-video">
-        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/decor.mp4" type="video/mp4" />
         </video>
       </div>
@@ -191,14 +191,14 @@ export const VehicleSection = () => {
 
   return (
     <div className="relative bg-black vehicle-section z-20" id="vehicle">
-      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white">
+      <div className="min-h-[480px] grid place-content-center sticky top-1/4 text-white vehicle-head">
         <div>
           <Headline title="Vehicle customization" />
           <MoreServices onClick={() => scrollTo('#vehiclecontent')} />
         </div>
       </div>
       <div className="relative bg-black vehicle-video">
-        <video preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/vehicle.mp4" type="video/mp4" />
         </video>
       </div>

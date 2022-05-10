@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="stylesheet" href="/css/fonts.css" />
       </Head>
-      <body className="font-century">
+      <body className="font-century min-w-[320px]">
         <Main />
         <NextScript />
       </body>

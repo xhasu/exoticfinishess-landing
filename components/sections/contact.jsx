@@ -55,10 +55,10 @@ const ContactSection = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-12 md:mb-24">
+    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto md:px-4 mb-12 md:mb-24">
       <div>
-        <div className="rounded-md bg-primary py-8 px-6 lg:p-8">
-          <ul className="text-xl">
+        <div className="md:rounded-md bg-primary py-8 px-4 md:px-6 lg:p-8">
+          <ul className="text-lg md:text-xl">
             <li className="flex gap-2 mb-4 items-center">
               <div className="w-12 flex-none flex justify-center text-center">
                 <EmailIcon />
@@ -77,14 +77,14 @@ const ContactSection = () => {
               </div>
               <a href="tel:+442033241234">305 767 - 9095</a>
             </li>
-            <li className="flex gap-4 mt-6">
+            <li className="flex justify-center md:justify-start gap-4 mt-6">
               <InstagramIcon />
               <FacebookIcon />
             </li>
           </ul>
         </div>
       </div>
-      <div>
+      <div className="px-4 md:px-0">
         <h2 className="font-bold text-2xl mb-4">Contact</h2>
         <form ref={formRef} name="contactForm" className="w-full needs-validation" autoComplete="off" noValidate>
           <div className="input-group">

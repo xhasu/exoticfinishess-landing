@@ -35,11 +35,11 @@ const IntroSection = () => {
     gsap.from('.stage-2 .st-group-1 > div > *', {
       scrollTrigger: {
         trigger: '.stage-2',
-        start: "center center",
+        start: "center 65%",
         toggleActions: "play none none reverse",
         pin: true,
+        pinSpacing: false,
         // scrub: true,
-        // pinSpacing: false,
         // markers: true,
       },
       stagger: 0.2,
@@ -54,7 +54,7 @@ const IntroSection = () => {
         end: "bottom bottom",
         scrub: true,
       },
-      x: "-=300%",
+      x: "-=350%",
     });
 
     gsap.to('.stage-intro .st-intro-right', {
@@ -64,7 +64,7 @@ const IntroSection = () => {
         end: "bottom bottom",
         scrub: true,
       },
-      x: "+=300%",
+      x: "+=350%",
     });
 
   }, [])
@@ -85,12 +85,12 @@ const IntroSection = () => {
 
       <div className="relative flex justify-center items-center z-10 stage-2">
 
-        <div className="st-group-1">
+        <div className="st-group-1 pb-80">
           <div className="max-w-7xl mx-auto text-white text-center px-4">
-            <h3 className="text-4xl uppercase mb-12">Welcome</h3>
-            <img src="/images/brand.png" alt="Exotic Finishess Brand Logo" width={250} height={250} className="mx-auto mb-8" />
-            <h2 className="font-acuminpro font-black uppercase text-3xl lg:text-7xl">Skins for everything</h2>
-            <h6 className="text-xl">What would you like to wrap or protect with out custom vinyl skins?</h6>
+            <h3 className="text-xl md:text-4xl uppercase mb-12">Welcome</h3>
+            <img src="/images/brand.png" alt="Exotic Finishess Brand Logo" width={250} height={250} className="w-40 md:w-auto mx-auto mb-8" />
+            <h2 className="font-acuminpro font-black uppercase text-lg md:text-3xl lg:text-7xl">Skins for everything</h2>
+            <h6 className="text-base md:text-xl">What would you like to wrap or protect with out custom vinyl skins?</h6>
           </div>
         </div>
 

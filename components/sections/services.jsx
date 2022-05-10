@@ -10,19 +10,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const ServicesSection = () => {
 
-  useEffect(() => {
-
-    ScrollTrigger.create({
-      trigger: '.services-section',
-      start: '-45px top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      toggleClass: {
-        targets: 'header',
-        className: 'header-dark',
-      },
-      // markers: true,
-    })
+  useEffect(() => { 
 
     gsap.from('.services-section h2', {
       scrollTrigger: {

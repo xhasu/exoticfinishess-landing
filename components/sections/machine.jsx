@@ -11,7 +11,7 @@ const MachineSection = () => {
         <div className="text-xl mb-8 font-normal">
           <p>We want the best for your business, that&apos;s why we have the best machine in the market to delivery high quality graphic design installations.</p>
           <br />
-          <p>Also we offer design services if you don&apos;t know how to start, our team work can advise and accompany through all the design and installation process.</p>
+          <p>Also we offer design services if you don&apos;t know how to start. Our team can advise and accompany you through the entire design and installation process.</p>
         </div>
         <div className="mb-8">
           <img src="/images/mimaki-machine.jpg" alt="Exotic Finishess Mimaki Machine" width="1265" height="789" className="mx-auto" />

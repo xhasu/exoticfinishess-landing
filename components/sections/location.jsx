@@ -8,7 +8,7 @@ const LocationSection = () => {
         <HeadlineGroup category="Our" title="Services" />
       </div>
       <div className="text-2xl mb-8 text-center  font-normal">
-        <p>Our services are for all USA, contact for further information let&apos;s work together.</p>
+        <p>We service all of US. Contact us for more information! <br />let&apos;s work together.</p>
       </div>
       <div className="mb-8">
         <img src="/images/location.png" alt="Exotic Finishess Mimaki Machine" width="1075" height="707" className="mx-auto" />

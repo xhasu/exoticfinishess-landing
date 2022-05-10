@@ -90,7 +90,7 @@ const IntroSection = () => {
             <h3 className="text-xl md:text-4xl uppercase mb-12">Welcome</h3>
             <img src="/images/brand.png" alt="Exotic Finishess Brand Logo" width={250} height={250} className="w-40 md:w-auto mx-auto mb-8" />
             <h2 className="font-acuminpro font-black uppercase text-lg md:text-3xl lg:text-7xl">Skins for everything</h2>
-            <h6 className="text-base md:text-xl">What would you like to wrap or protect with out custom vinyl skins?</h6>
+            <h6 className="text-base md:text-xl">What would you like to wrap or protect with our custom vinyl skins?</h6>
           </div>
         </div>
 

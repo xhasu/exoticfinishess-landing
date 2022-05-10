@@ -63,7 +63,7 @@ export const MarketingSection = () => {
         </div>
       </div>
       <div className="relative bg-black marketing-video">
-        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/marketing.mp4" type="video/mp4" />
         </video>
       </div>
@@ -134,7 +134,7 @@ export const DecorSection = () => {
         </div>
       </div>
       <div className="relative bg-black decor-video">
-        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/decor.mp4" type="video/mp4" />
         </video>
       </div>
@@ -142,7 +142,7 @@ export const DecorSection = () => {
         <HeadlineGroup category="Decor" title="Services" />
         <ul className=" font-normal px-4 mx-auto text-center mt-8">
           <li>- Custom acrylic printing</li>
-          <li>- Window frost/WIndow ting</li>
+          <li>- Window frost/Window tint</li>
           <li>- Custom wall wraps</li>
           <li>- Architectural vinyl</li>
           <li>- Color change</li>
@@ -198,7 +198,7 @@ export const VehicleSection = () => {
         </div>
       </div>
       <div className="relative bg-black vehicle-video">
-        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true}>
+        <video className="aspect-square md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true}>
           <source src="/media/vehicle.mp4" type="video/mp4" />
         </video>
       </div>
@@ -219,7 +219,7 @@ export const VehicleSection = () => {
           <li>- Window tint set (no windshield) xpel</li>
           <li>- Window tint winshield xpel</li>
           <li>- Custom stripes</li>
-          <li>- Tail/head lights tinted (pair)	</li>
+          <li>- Tail/head smoked lights (pair)</li>
         </ul>
         <div className="border-b border-black mx-auto max-w-[180px] mt-8"></div>
       </div>

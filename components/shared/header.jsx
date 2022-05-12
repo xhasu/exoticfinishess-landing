@@ -71,7 +71,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex-none">
-          <div className="absolute top-0 right-4 w-12 h-12 cursor-pointer icon-plus transition-transform duration-500">
+          <div className="absolute top-1.5 md:top-0 right-4 w-8 h-8 md:w-12 md:h-12 cursor-pointer icon-plus transition-transform duration-500">
             {!showPlusIcon && (
               <div onClick={() => setShowMenu(!showMenu)}>
                 <PlusIcon />

@@ -36,7 +36,9 @@ const HomePage = () => {
   return (
     <UIContext.Provider value={UIData}>
       <Head>
-        <title>Exotic Finishess</title>
+        <title>Exotic Finishess - Custom Textured Walls & Wraps</title>
+        <meta name="description" content="Custom Textured Walls & Wraps" />
+        <meta name="author" content="Exotic finishess" />
       </Head>
 
       <Header />

@@ -7,6 +7,7 @@ export default function Document() {
         <link rel="stylesheet" href="/css/fonts.css" />
       </Head>
       <body className="font-century min-w-[320px]">
+        <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV4Q5VM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`}} />
         <Main />
         <NextScript />
       </body>

@@ -22,11 +22,12 @@ const IntroSection = () => {
     gsap.to('.stage-1 .st-group-1', {
       scrollTrigger: {
         trigger: '.stage-1',
-        start: "center center",
+        start: "center 25%",
         end: "bottom top",
         pin: true,
         pinSpacing: false,
         scrub: true,
+        // markers: true,
       },
       opacity: 0,
       y: "-25%",
@@ -35,11 +36,10 @@ const IntroSection = () => {
     gsap.from('.stage-2 .st-group-1 > div > *', {
       scrollTrigger: {
         trigger: '.stage-2',
-        start: "center 65%",
+        start: "35% 65%",
         toggleActions: "play none none reverse",
         pin: true,
         pinSpacing: false,
-        // scrub: true,
         // markers: true,
       },
       stagger: 0.2,
@@ -50,7 +50,7 @@ const IntroSection = () => {
     gsap.to('.stage-intro .st-intro-left', {
       scrollTrigger: {
         trigger: '.intro-section',
-        start: "center bottom",
+        start: "center 75%",
         end: "bottom bottom",
         scrub: true,
       },
@@ -60,7 +60,7 @@ const IntroSection = () => {
     gsap.to('.stage-intro .st-intro-right', {
       scrollTrigger: {
         trigger: '.intro-section',
-        start: "center bottom",
+        start: "center 75%",
         end: "bottom bottom",
         scrub: true,
       },
@@ -72,7 +72,7 @@ const IntroSection = () => {
   return (
     <div className="relative intro-section bg-black" id="intro">
 
-      <div className="relative min-h-screen flex justify-center items-center z-10 stage-1">
+      <div className="relative min-h-[640px] lg:min-h-[768px] flex justify-center items-center z-10 stage-1">
 
         <div className="st-group-1">
           <div className="max-w-2xl md:min-w-[720px] mx-auto md:border-l-2 border-black pl-6">
@@ -85,7 +85,7 @@ const IntroSection = () => {
 
       <div className="relative flex justify-center items-center z-10 stage-2">
 
-        <div className="st-group-1 pb-80">
+        <div className="st-group-1 pb-80 relative z-0">
           <div className="max-w-7xl mx-auto text-white text-center px-4">
             <h3 className="text-xl md:text-4xl uppercase mb-12">Welcome</h3>
             <img src="/images/brand.png" alt="Exotic Finishess Brand Logo" width={250} height={250} className="w-40 md:w-auto mx-auto mb-8" />
@@ -94,11 +94,11 @@ const IntroSection = () => {
           </div>
         </div>
 
-        <div className="absolute top-[8%] left-[8%] floating z-0 select-none pointer-events-none">
+        <div className="absolute top-[8%] left-[8%] floating z-10 select-none pointer-events-none">
           <img src="/images/icons/icon-ring-gold.png" alt="" width={48} height={49} />
         </div>
 
-        <div className="absolute bottom-[18%] right-[18%] floating z-0 select-none pointer-events-none">
+        <div className="absolute bottom-[18%] right-[18%] floating z-10 select-none pointer-events-none">
           <img src="/images/icons/icon-ring-gold.png" alt="" width={48} height={49} />
         </div>
 

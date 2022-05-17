@@ -302,12 +302,12 @@ export const VehicleSection = () => {
 
           <div className="mb-4">
             <h3 className="font-bold mb-4 text-lg flex items-center gap-x-4">
-              Chrome deleted
+              Chrome delete
               <img src="/images/3m.png" alt="3M Exotic Finishess" width={64} height={34} />
             </h3>
             <ul>
-              <li>Black out package gloss (chrome deleted)</li>
-              <li>Black out package matte (chrome deleted)</li>
+              <li>Black out package gloss</li>
+              <li>Black out package matte</li>
             </ul>
           </div>
 

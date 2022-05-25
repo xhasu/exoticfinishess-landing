@@ -82,7 +82,7 @@ export const MarketingSection = () => {
         </div>
       </div>
       <div className="relative bg-black marketing-video">
-        <video className="aspect-square md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
+        <video className="aspect-auto md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
           <source src="/media/marketing.mp4" type="video/mp4" />
         </video>
       </div>
@@ -171,7 +171,7 @@ export const DecorSection = () => {
         </div>
       </div>
       <div className="relative bg-black decor-video">
-        <video className="aspect-square md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
+        <video className="aspect-auto md:aspect-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
           <source src="/media/decor.mp4" type="video/mp4" />
         </video>
       </div>
@@ -253,7 +253,7 @@ export const VehicleSection = () => {
         </div>
       </div>
       <div className="relative bg-black vehicle-video">
-        <video className="aspect-square md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
+        <video className="aspect-auto md:aspect-video" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
           <source src="/media/vehicle.mp4" type="video/mp4" />
         </video>
       </div>

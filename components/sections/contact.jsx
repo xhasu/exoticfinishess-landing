@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { FacebookIcon, InstagramIcon, EmailIcon, PinIcon, PhoneIcon } from "components/ui/icons"
 
+const LoadingScreen = () => {
+  return (
+    <div className="bg-black bg-opacity-80 w-full h-full fixed top-0 left-0 flex justify-center items-center z-50">
+      <div className="text-2xl tracking-extrawide uppercase text-white font-acuminpro font-bold">Sending...</div>
+    </div>
+  )
+}
+
 const ContactSection = () => {
 
   const formRef = useRef();
@@ -30,6 +38,50 @@ const ContactSection = () => {
       return true;
     }
 
+    const submitContactForm = () => {
+      setLoading(true);
+  
+      const form = formRef.current;
+      const formData = new FormData();
+  
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('subject', subject);
+      formData.append('message', message);
+      
+      // send formDataObject to backend using fetch post
+      fetch('/contact.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.success) {
+          resetForm();
+        } else {
+          console.log('error');
+        }
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
+        setLoading(false);
+      })
+    }
+
+    const resetForm = () => {
+
+      const form = formRef.current;
+
+      form.classList.remove('was-validated');
+      form.classList.remove('custom-validation');
+
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    }
+
     formRefCurrent.addEventListener('submit', validateForm);
 
     return () => {
@@ -38,21 +90,7 @@ const ContactSection = () => {
 
   }, [name, email, subject, message])
 
-  const submitContactForm = async () => {
-    setLoading(true);
 
-    const form = formRef.current;
-    const formData = new FormData();
-
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('subject', subject);
-    formData.append('message', message);
-
-    // get json from formData entries
-    const formDataObject = Object.fromEntries(formData.entries());
-    console.log(formDataObject);
-  }
 
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto md:px-4 mb-12 md:mb-24">
@@ -63,7 +101,7 @@ const ContactSection = () => {
               <div className="w-12 flex-none flex justify-center text-center">
                 <EmailIcon />
               </div>
-              <a href="mailto:info@exoticfinishess.com">info@exoticfinishess.com</a>
+              <a href="mailto:exoticfinishess@gmail.com">exoticfinishess@gmail.com</a>
             </li>
             <li className="flex gap-2 mb-4 items-center">
               <div className="w-12 flex-none flex justify-center text-center">
@@ -108,6 +146,7 @@ const ContactSection = () => {
           </div>
         </form>
       </div>
+      { loading &&  <LoadingScreen />}
     </div>
   )
 }

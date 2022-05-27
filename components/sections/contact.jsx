@@ -113,7 +113,7 @@ const ContactSection = () => {
               <div className="w-12 flex-none flex justify-center text-center">
                 <PhoneIcon />
               </div>
-              <a href="tel:+442033241234">305 767 - 9095</a>
+              <a href="tel:3057679095">305 767 - 9095</a>
             </li>
             <li className="flex justify-center md:justify-start gap-4 mt-6">
               <InstagramIcon />

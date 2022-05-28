@@ -33,16 +33,16 @@ const NavigationSection = () => {
   return (
     <div className="bg-black fixed inset-0 z-40">
       <div className="h-screen flex place-items-center nav-section">
-        <div className="max-w-xs mx-auto">
-          <nav className="text-4xl md:text-6xl text-center text-white uppercase font-black">
+        <div className="max-w-sm mx-auto">
+          <nav className="text-4xl md:text-7xl text-center text-white uppercase font-black">
             <ul>
-              <li className="cursor-pointer mb-4" onClick={() => scrollTo('#intro')}>
+              <li className="cursor-pointer mb-4 font-acuminpro" onClick={() => scrollTo('#intro')}>
                 <h3>Home</h3>
               </li>
-              <li className="cursor-pointer mb-4" onClick={() => scrollTo('#services')}>
+              <li className="cursor-pointer mb-4 font-acuminpro" onClick={() => scrollTo('#services')}>
                 <h3>Services</h3>
               </li>
-              <li className="cursor-pointer mb-4" onClick={handleShowAbout}>
+              <li className="cursor-pointer mb-4 font-acuminpro" onClick={handleShowAbout}>
                 <h3>About</h3>
               </li>
             </ul>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Headline, HeadlineGroup } from 'components/shared/headlines'
 import MoreServices from 'components/ui/more'
 
@@ -23,6 +23,15 @@ export const MarketingSection = () => {
 
   // video ref
   const videoRef = useRef(null);
+  const [videoUrl, setVideoUrl] = useState('');
+
+  // change video url based on window width
+  useEffect(() => {
+    if( window !== undefined ) {
+      const url = window.innerWidth > 640 ? '/media/marketing.mp4' : '/media/marketing-mobile.mp4';
+      setVideoUrl(url);
+    }
+  }, []);
 
   useEffect(() => {
     gsap.from('.marketing-section h2, .marketing-section .more-services', {
@@ -83,7 +92,7 @@ export const MarketingSection = () => {
       </div>
       <div className="relative bg-black marketing-video">
         <video className="md:aspect-auto w-full mx-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
-          <source src="/media/marketing.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
         </video>
       </div>
       <div className="relative py-24 px-4 bg-white marketing-content" id="marketingcontent">
@@ -112,6 +121,16 @@ export const DecorSection = () => {
 
   // video ref
   const videoRef = useRef(null);
+
+  const [videoUrl, setVideoUrl] = useState('');
+
+  // change video url based on window width
+  useEffect(() => {
+    if( window !== undefined ) {
+      const url = window.innerWidth > 640 ? '/media/decor.mp4' : '/media/decor-mobile.mp4';
+      setVideoUrl(url);
+    }
+  }, []);
 
   useEffect(() => {
 
@@ -173,7 +192,7 @@ export const DecorSection = () => {
       </div>
       <div className="relative bg-black decor-video">
         <video className="md:aspect-auto w-full mx-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
-          <source src="/media/decor.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
         </video>
       </div>
       <div className="relative py-24 px-4 bg-white decor-content" id="decorcontent">
@@ -195,6 +214,16 @@ export const VehicleSection = () => {
 
   // video ref
   const videoRef = useRef(null);
+
+  const [videoUrl, setVideoUrl] = useState('');
+
+  // change video url based on window width
+  useEffect(() => {
+    if( window !== undefined ) {
+      const url = window.innerWidth > 640 ? '/media/vehicle.mp4' : '/media/vehicle-mobile.mp4';
+      setVideoUrl(url);
+    }
+  }, []);
 
   useEffect(() => {
 
@@ -256,7 +285,7 @@ export const VehicleSection = () => {
       </div>
       <div className="relative bg-black vehicle-video">
         <video className="md:aspect-video w-full mx-auto" preload="metadata" loop={true} muted={true} playsInline={true} ref={videoRef} width="1920" height="900">
-          <source src="/media/vehicle.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
         </video>
       </div>
       <div className="relative py-24 px-4 bg-white vehicle-content" id="vehiclecontent">
